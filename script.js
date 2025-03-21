@@ -29,9 +29,14 @@ function popFromList() {
         return;
     }
     
-    if (isNaN(index) || index < 0 || index >= items.length) {
-        showError("Invalid index! Must be between 0 and " + (items.length - 1));
+    if (isNaN(index) || index < -items.length || index >= items.length) {
+        showError("Invalid index! Must be between " + (-items.length) + " and " + (items.length - 1));
         return;
+    }
+    
+    // Convert negative index to positive
+    if (index < 0) {
+        index = items.length + index;
     }
     
     let itemToRemove = items[index];
@@ -48,6 +53,7 @@ function popFromList() {
     document.getElementById("popIndex").value = "";
     clearError();
 }
+
 
 function removeFromList() {
     let listContainer = document.getElementById("listContainer");
