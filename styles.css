@@ -1,0 +1,320 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%);
+    margin: 0;
+    transition: background 0.5s ease;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    max-width: 90vw;
+    box-sizing: border-box;
+    border-top: 5px solid #6366F1;
+    border-bottom: 5px solid #EC4899;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #4F46E5;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(90deg, #6366F1, #EC4899);
+    border-radius: 3px;
+}
+
+.list-container {
+    display: flex;
+    gap: 12px;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    min-height: 70px;
+    background: #F9FAFB;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.list-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #6366F1, #8B5CF6, #EC4899);
+}
+
+.list-container:hover {
+    border-color: #8B5CF6;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+}
+
+.list-item {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(145deg, #6366F1, #4F46E5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    user-select: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 5px;
+    font-size: 0.9rem;
+}
+
+.list-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(99, 102, 241, 0.4);
+    background: linear-gradient(145deg, #7C3AED, #6D28D9);
+}
+
+.input-group {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+input {
+    padding: 10px 15px;
+    width: 150px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    outline: none;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #8B5CF6;
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
+}
+
+input::placeholder {
+    color: #a0aec0;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    padding: 10px 16px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.append { 
+    background: linear-gradient(145deg, #3B82F6, #2563EB); 
+}
+.append:hover { 
+    background: linear-gradient(145deg, #2563EB, #1D4ED8); 
+}
+
+.pop { 
+    background: linear-gradient(145deg, #EF4444, #DC2626); 
+}
+.pop:hover { 
+    background: linear-gradient(145deg, #DC2626, #B91C1C); 
+}
+
+.remove { 
+    background: linear-gradient(145deg, #F97316, #EA580C); 
+}
+.remove:hover { 
+    background: linear-gradient(145deg, #EA580C, #C2410C); 
+}
+
+.sort { 
+    background: linear-gradient(145deg, #10B981, #059669); 
+}
+.sort:hover { 
+    background: linear-gradient(145deg, #059669, #047857); 
+}
+
+.reverse { 
+    background: linear-gradient(145deg, #06B6D4, #0891B2); 
+}
+.reverse:hover { 
+    background: linear-gradient(145deg, #0891B2, #0E7490); 
+}
+
+.shuffle { 
+    background: linear-gradient(145deg, #F59E0B, #D97706); 
+    color: white; 
+}
+.shuffle:hover { 
+    background: linear-gradient(145deg, #D97706, #B45309); 
+}
+
+#error-message {
+    color: #EF4444;
+    font-weight: 500;
+    margin-top: 15px;
+    min-height: 20px;
+    transition: all 0.3s ease;
+}
+
+.empty-message {
+    color: #94A3B8;
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* Responsive adjustments for medium screens */
+@media (max-width: 400px) {
+    .container {
+        padding: 15px;
+        width: 90%;
+    }
+    
+    input {
+        width: 120px;
+        padding: 8px 10px;
+    }
+    
+    .btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .list-item {
+        width: 45px;
+        height: 45px;
+        font-size: 14px;
+    }
+}
+
+/* Responsive adjustments for very small screens (320px) */
+@media (max-width: 350px) {
+    .container {
+        padding: 10px;
+        width: 95%;
+        max-width: 320px;
+    }
+    
+    h2 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .list-container {
+        padding: 10px;
+        gap: 8px;
+        min-height: 60px;
+    }
+    
+    .list-item {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+    }
+    
+    .input-group {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 10px;
+    }
+    
+    input {
+        width: 100%;
+        max-width: 250px;
+        padding: 6px 8px;
+        font-size: 14px;
+    }
+    
+    .btn {
+        padding: 6px 10px;
+        font-size: 12px;
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        width: 100%;
+    }
+    
+    .button-group .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    #error-message {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+}
+
+/* Fix for very small heights */
+@media (max-height: 650px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        padding: 20px 0;
+    }
+    
+    .container {
+        margin: 10px auto;
+    }
+}

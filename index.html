@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python List Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Python List Visualizer</h2>
+        
+        <div class="list-container" id="listContainer"></div>
+        
+        <div class="input-group">
+            <input type="text" id="inputValue" placeholder="Enter value">
+            <button class="btn append" onclick="appendToList()">Append</button>
+        </div>
+
+        <div class="input-group">
+            <input type="number" id="popIndex" placeholder="Enter index to pop">
+            <button class="btn pop" onclick="popFromList()">Pop</button>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="removeValue" placeholder="Enter value to remove">
+            <button class="btn remove" onclick="removeFromList()">Remove</button>
+        </div>
+
+        <div class="button-group">
+            <button class="btn sort" onclick="sortList()">Sort</button>
+            <button class="btn reverse" onclick="reverseSortList()">Reverse Sort</button>
+            <button class="btn shuffle" onclick="shuffleList()">Shuffle</button>
+        </div>
+
+        <p id="error-message"></p>
+    </div>
+</body>
+</html>
